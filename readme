@@ -2,6 +2,8 @@ SurveyService on Tilastokeskuksen henkilötiedonkeruiden hallinnointiin tarkoite
 
 Projektin pohjana on käytetty web-sovellusohjelmointikurssin Foorumi-projektipohjaa. Tietokantana on paikallinen SQLITE-tietokanta. ORM-kehyksenä on käytetty Sequelizeä. Samassa projektissa on sekä Angularilla toteutettu frontend että Nodella ja Expressillä toteutettu backend.
 
+Sovellus löytyy Herokusta: https://mysterious-atoll-74207.herokuapp.com/#/
+
 tietokantalauseet:
 
 CREATE TABLE `Surveys` (id INTEGER PRIMARY KEY, `name` VARCHAR(255), `description` TEXT, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL);

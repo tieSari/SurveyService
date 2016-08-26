@@ -30,6 +30,6 @@ Angular
 - 4h 21.8. Tiedonkeruu-sovelluksen tekoa Foorumi-pohjalle. Survey- ja Person-kontrollerien ja tietokantaobjektien lisäys ja testaus. 		   Datan haku kannasta. 
 - 2h 23.8. tappelua findOne-tietokantahaun kanssa, sekä include-attribuutin kanssa. Lopulta selvisi, että Sequelizen mielestä monikkomuoto Person ei ole Persons vaan People!
 - 3h 24.8. näkymien ulkoasun säätöä
-- 3h 25.8. kohdehenkilön ja tiedonkeruun poisto-toiminnot
-- 2h 26.8. Git-hubiin vienti ja readme:n kirjoitus
+- 3h 25.8. kohdehenkilön ja tiedonkeruun poisto-toiminnot, syöttökenttien validoinnit
+- 2h 26.8. viimeistelyä, Git-hubiin vienti ja readme:n kirjoitus
 
