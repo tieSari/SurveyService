@@ -1,0 +1,49 @@
+<div class="page-header">
+    <h1>Tiedonkeruut</h1>
+</div>
+<div ng-app="SurveyApp">
+    <div ng-controller="SurveyListController">
+   <!--     <div ng-repeat="survey in surveys">
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a href="#/surveys/{{survey.id}}">{{survey.name}}</a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    {{survey.description}}
+                </div>
+            </div>
+        </div> -->
+        
+         <table class="table-striped table-bordered" >
+                <th>Nimi</th>
+                <th>Kuvaus</th>
+                <th>Poista</th> 
+                    <tr ng-repeat="survey in surveys">
+                        <td><a href="#/surveys/{{survey.id}}">{{survey.name}}</a></td>
+                        <td>{{survey.description}}</td>
+                        <td ><button class="btn btn-danger" ng-click="deleteSurvey($index,survey.id)"><b>X</b></button></td>
+          
+                    </tr>
+            </table> 
+        
+            <h2>Lisää uusi tiedonkeruu</h2>
+<div class="row">
+    <div class="col-md-5">
+            <form name="infoForm">
+                <div class="form-group">
+                    <label>Nimi</label>
+                    <input type="text" class="form-control" ng-model="newSurvey.name" required ng-minlength="2">
+                </div>
+
+                <div class="form-group">
+                    <label>Kuvaus</label>
+                    <textarea class="form-control" ng-model="newSurvey.description"></textarea>
+                </div>
+                <button class="btn btn-success" ng-click="addSurvey()"  ng-disabled="infoForm.$invalid">Lisää tiedonkeruu</button>
+            </form>
+    </div>
+</div>
+        </div>

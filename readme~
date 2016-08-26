@@ -1,0 +1,35 @@
+SurveyService on Tilastokeskuksen henkilötiedonkeruiden hallinnointiin tarkoitettu sovellus. Sen avulla voi tarkastella tiedonkeruita ja lisätä ja poistaa niitä kannasta. Tiedonkeruisiin voi myös lisätä ja poistaa otokseen kuuluvia kohdehenkilöitä.
+
+Projektin pohjana on käytetty web-sovellusohjelmointikurssin Foorumi-projektipohjaa. Tietokantana on paikallinen SQLITE-tietokanta. ORM-kehyksenä on käytetty Sequelizeä. Samassa projektissa on sekä Angularilla toteutettu frontend että Nodella ja Expressillä toteutettu backend.
+
+tietokantalauseet:
+
+CREATE TABLE `Surveys` (id INTEGER PRIMARY KEY, `name` VARCHAR(255), `description` TEXT, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL);
+
+CREATE TABLE `People` (`id` INTEGER PRIMARY KEY, `name` VARCHAR(255), `phone` VARCHAR(255), `email` VARCHAR(255),`createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `SurveyId` INTEGER REFERENCES `Surveys` (`id`) ON DELETE SET NULL ON UPDATE CASCADE);
+
+
+
+
+Projektiin käytetyt tunnit:
+Node
+- 2h 15.8. ympäristön pystytys
+- 2h 16.8. yhteysyrityksiä Mongo-kantaan kotikoneelta
+- 2h 17.8. yhteysyrityksiä Mongo-kantaan kotikoneelta
+- 2h 21.8. Foorumi-pohjan (weso-kurssilta) ja SQLiten käyttöönotto NetBeansissä
+- 2h 22.8. tappelua findOne-tietokantahaun kanssa
+- 2h 23.8. tappelua findOne-tietokantahaun kanssa jatkui
+- 3h 24.8. delete-komennon lisäys yms.
+
+
+
+Angular
+- 1h 16.8. ympäristön pystytys
+- 2h 18.8. eka kontrolleri
+- 2h 20.8. Web-selainohjelmointiesimerkkien tutkimista ja pohjaprojektin ympäristön testausta
+- 4h 21.8. Tiedonkeruu-sovelluksen tekoa Foorumi-pohjalle. Survey- ja Person-kontrollerien ja tietokantaobjektien lisäys ja testaus. 		   Datan haku kannasta. 
+- 2h 23.8. tappelua findOne-tietokantahaun kanssa, sekä include-attribuutin kanssa. Lopulta selvisi, että Sequelizen mielestä monikkomuoto Person ei ole Persons vaan People!
+- 3h 24.8. näkymien ulkoasun säätöä
+- 3h 25.8. kohdehenkilön ja tiedonkeruun poisto-toiminnot
+- 2h 26.8. Git-hubiin vienti ja readme:n kirjoitus
+

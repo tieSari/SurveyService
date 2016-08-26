@@ -1,0 +1,58 @@
+<div class="page-header">
+    <div ng-app="SurveyApp">
+        <div ng-controller="ShowSurveyController">
+            <div class="row">
+                <h1>{{survey.name}}</h1>
+                <h3>{{survey.description}}</h3>
+                <br>
+            <h2>Kohdehenkilöt</h2>
+            </div>
+                <div class="row" ng-controller="ShowPersonController">
+                    <div class="col-md-12">
+            <table class="table-striped table-bordered" >
+                <th>Nimi</th>
+                <th>Puhelin</th>
+                <th>Email</th> 
+                <th>Poista</th> 
+                    <tr ng-repeat="person in survey.People">
+                        <td>{{person.name}}</td>
+                        <td>{{person.phone}}</td>
+                        <td>{{person.email}}</td>
+                        <td ><button class="btn btn-danger" ng-click="deletePerson($index,person.id)"><b>X</b></button></td>
+          
+                    </tr>
+            </table> 
+
+            <h2>Lisää tiedonkeruuseen uusi kohdehenkilö</h2>
+            </div>
+<div class="row">
+    <div class="col-md-5">
+            <form ng-controller="ShowPersonController" name="infoForm">
+                <div class="form-group">
+                    <label>Nimi</label>
+                    <input type="text" class="form-control"  ng-model="personToAdd.name" required ng-minlength="3">
+                </div>
+
+                <div class="form-group">
+                    <label>Puhelinnumero</label>
+                    <input type="text" class="form-control" name="phone" ng-model="personToAdd.phone" required ng-pattern="/^[0-9]{6,}$/">
+                          <div ng-show="infoForm.phone.$invalid && infoForm.phone.$dirty">
+        Tarkista puhelinnumero!
+      </div>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input name="email" type="text" class="form-control"  ng-model="personToAdd.email" ng-pattern="/^.+@.+\..+$/">
+                          <div ng-show="infoForm.email.$invalid && infoForm.email.$dirty">
+        Sähköpostiosoite ei ole validi!
+      </div>
+                </div>
+                <button class="btn btn-success" ng-click="addPerson()"  ng-disabled="infoForm.$invalid">Lisää kohde</button>
+            </form>
+        </div>
+    <div class="col-md-7"></div>
+                </div>
+</div>
+</div>
+      </div>
+    </div>
